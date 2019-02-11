@@ -90,7 +90,8 @@ class FeedbackController extends Controller
      */
     public function edit($id)
     {
-        //
+        $feedback =Feedback::find($id);
+        return view('backend.feedback.edit',compact('feedback'));
     }
 
     /**
@@ -102,7 +103,30 @@ class FeedbackController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $feedback = new Feedback();
+
+        $feedback->name = $request->name;
+        $feedback->email = $request->email;
+        $feedback->contact = $request->contact;
+        $feedback->msg = $request->msg;
+        $feedback->priority = $request->priority;
+
+
+
+
+
+
+        if ($feedback->save()) {
+
+            $request->session()->flash('success_msg', 'Feed back shown at homepage  Successfully');
+            return redirect()->action(
+                'Feedback\FeedbackController@index');
+        } else {
+
+            $request->session()->flash('error_msg', 'Oops! Error Occured');
+            return redirect()->back();
+
+        }
     }
 
     /**

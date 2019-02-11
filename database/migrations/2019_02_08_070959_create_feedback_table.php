@@ -19,7 +19,7 @@ class CreateFeedbackTable extends Migration
             $table->string('email');
             $table->bigInteger('contact');
             $table->longText('msg');
-            $table->boolean('priority')->default('1');
+            $table->boolean('priority')->default('0');
             $table->timestamps();
         });
     }

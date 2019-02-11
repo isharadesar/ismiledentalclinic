@@ -78,33 +78,44 @@
                             {{@csrf_field()}}
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Patient name</label>
-                                <input type="text" class="form-control" placeholder="Enter your full name " name="patientname" id="recipient-name" required="">
+                                <input type="text"  required class="form-control" placeholder="Enter your full name " name="patientname" id="recipient-name" required="">
                             </div>
                             <div class="form-group">
                                 <label for="recipient-phone" class="col-form-label">Phone</label>
-                                <input type="number" class="form-control" placeholder="Enter your contact number " name="contact" id="recipient-phone" required="">
+                                <input type="number"  required class="form-control" placeholder="Enter your contact number " name="contact" id="recipient-phone" required="">
                             </div>
                             <div class="form-group">
                                 <label for="datepicker" class="col-form-label">Choose Date of Appointment</label>
-                                <input class="date form-control" id="datepicker" name="app_date" type="date" value="" required="" />
+                                <input class="date form-control" required id="datepicker" name="app_date" type="date" value="" required="" />
                             </div>
+                            @php
+                                $times = App\Model\TimeModel\Time::get();
+                            @endphp
                             <div class="form-group">
-                                <label for="datepicker" class="col-form-label">Choose Time</label>
-                                <input class="date form-control" id="datepicker" name="app_time" type="time" value="" required="" />
-                            </div>
-
-
-
-
-                            <div class="form-group">
-                                <select required="" name="service" class="form-control">
-                                    <option value="">Select Speciality</option>
-                                    <option value="1">Dermatology</option>
-                                    <option value="2">ENT</option>
-                                    <option value="3"> Genaral Medicine</option>
-                                    <option value="4">Nutritionist</option>
+                                <label>Select Time</label>
+                                <select class="form-control" required name="app_time" >
+                                    @foreach($times as $time)
+                                        <option value="{{$time->from}}-{{$time->to}}"> {{$time->from}}-{{$time->to}}</option>
+                                    @endforeach
                                 </select>
                             </div>
+                            @php
+                                $services = App\Model\ServiceModel\Service::get();
+                            @endphp
+                            <div class="form-group">
+                                <label>Select Service</label>
+                                <select class="form-control"  name="service"  required>
+                                    @foreach($services as $service)
+                                        <option value="{{$service->title}}"> {{$service->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+
+
+
+
+
                             <input type="submit" value="Request Appointment" class="btn_apt">
                         </form>
                     </div>

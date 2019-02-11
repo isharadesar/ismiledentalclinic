@@ -70,9 +70,7 @@
                     <li class="nav-item">
                         <a class="nav-link  text-white text-capitalize" href="\teams">Team</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link  text-white text-capitalize" href="\contacts">Contact</a>
-                    </li>
+
                 </ul>
             </div>
 
@@ -82,36 +80,36 @@
     <div class="container">
         @foreach($sliders as $slider)
 
-<style>
-    .banner {
-        background: url("{{asset('images/sliderImage').'/'.$slider->img_url}}") bottom no-repeat;
+            <style>
+                .banner {
+                    background: url("{{asset('images/sliderImage').'/'.$slider->img_url}}") bottom no-repeat;
 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        -ms-background-size: cover;
-        background-size: cover;
-        position: relative;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    -ms-background-size: cover;
+                    background-size: cover;
+                    position: relative;
 
-    }
-</style>
+                }
+            </style>
 
-        <div class="banner-text">
-            <div class="callbacks_container">
-                <ul class="rslides" id="slider3">
-                    <li>
-                        <div class="slider-info">
-                            <span class="">Providing total oral care solution Your smile is important to us</span>
-                            <h3>Your smile is important to us</h3>
-                            <a class="btn btn-primary mt-3" href="\teams" role="button"><i class="fas fa-calendar mr-3" style="color: white"></i>MAKE APPOINTMENT</a>
-                        </div>
-                    </li>
+            <div class="banner-text">
+                <div class="callbacks_container">
+                    <ul class="rslides" id="slider3">
+                        <li>
+                            <div class="slider-info">
+                                <span class="">Providing total oral care solution Your smile is important to us</span>
+                                <h3>Your smile is important to us</h3>
+                                <a class="btn btn-primary mt-3" href="\teams" role="button"><i class="fas fa-calendar mr-3" style="color: white"></i>MAKE APPOINTMENT</a>
+                            </div>
+                        </li>
 
 
-                </ul>
+                    </ul>
+                </div>
             </div>
-        </div>
-            @endforeach
+        @endforeach
     </div>
     <!-- //container -->
 </div>
@@ -128,8 +126,8 @@
                 <ul class="list-group mt-3">
                     @foreach($services as $service)
 
-                    <li class="list-group-item border-0">
-                        <i class="fas fa-tooth mr-3" style="color: white"></i>{{$service->title}}</li>
+                        <li class="list-group-item border-0">
+                            <i class="fas fa-tooth mr-3" style="color: white"></i>{{$service->title}}</li>
 
                 </ul>
                 @endforeach
@@ -139,16 +137,17 @@
                     $times = App\Model\TimeModel\Time::paginate(3);
                 @endphp
                 <h5>opening hours</h5>
-                <ul class="list-unstyled">
-                    @foreach($times as $time)
-                    <li class="clearfix py-3">
-                        <span class="float-left">{{$time->day}} </span>
+                @foreach($times as $time)
+                    <ul class="list-unstyled">
 
-                        <div class="value float-right"> {{$time->from}} - {{$time->to}}</div>
-                    </li>
+                        <li class="clearfix py-3">
+                            <span class="float-left">{{$time->day}} </span>
+
+                            <div class="value float-right"> {{$time->from}} - {{$time->to}}</div>
+                        </li>
 
 
-                </ul>
+                    </ul>
                 @endforeach
             </div>
             <div class="col-lg-4 triple-sec">
@@ -156,9 +155,9 @@
                     $abouts = App\Model\AboutModel\About::paginate(1);
                 @endphp
 
-@foreach($abouts as $about)
-                <h5 class="text-black">About us</h5>
-                <p class="pt-4">{!! $about->description!!}</p>
+                @foreach($abouts as $about)
+                    <h5 class="text-black">About us</h5>
+                    <p class="pt-4">{!! $about->description!!}</p>
             </div>
             @endforeach
         </div>
@@ -179,35 +178,35 @@
         @endphp
         <div class="agileits-about-row row  text-center pt-md-0 pt-5">
             @foreach($services as $service)
-            <div class="col-lg-4 col-sm-6 agileits-about-grids">
+                <div class="col-lg-4 col-sm-6 agileits-about-grids">
 
-                <div class="p-md-5 p-sm-3">
-                    <i class="fas fa-tooth"></i>
-                    <h4 class="&#xf0f0;">{{$service->title}}</h4>
-                    <p>{!! $service->description !!}.</p>
+                    <div class="p-md-5 p-sm-3">
+                        <i class="fas fa-tooth"></i>
+                        <h4 class="&#xf0f0;">{{$service->title}}</h4>
+                        <p>{!! $service->description !!}.</p>
+                    </div>
+
                 </div>
-
-        </div>
             @endforeach
 
         </div>
     </div>
 </div>
 
-    </div>
-    <section class="blog_w3ls py-lg-5">
-        <div class="container">
-            @php
+</div>
+<section class="blog_w3ls py-lg-5">
+    <div class="container">
+        @php
             $teams = App\Model\TeamModel\Team::paginate(3);
-            @endphp
-            <div class="title-section text-center pb-lg-5">
-                <h4>world of medicine</h4>
-                <h3 class="w3ls-title text-center text-capitalize">Our Team</h3>
-            </div>
+        @endphp
+        <div class="title-section text-center pb-lg-5">
+            <h4>world of medicine</h4>
+            <h3 class="w3ls-title text-center text-capitalize">Our Team</h3>
+        </div>
 
-            <div class="row py-5">
-                <!-- blog grid -->
-                @foreach($teams  as $team)
+        <div class="row py-5">
+            <!-- blog grid -->
+            @foreach($teams  as $team)
                 <div class="col-lg-4 col-md-6">
                     <div class="card border-0 med-blog">
                         <div class="card-header p-0">
@@ -230,59 +229,52 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
-            </div>
-
+            @endforeach
         </div>
 
-    </section>
-    <!-- //blog -->
-    <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.845522334678!2d85.33161151440146!3d27.691168982798597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb195fde211ad5%3A0x11a8970c9d050e45!2sismile+dental+clinic!5e0!3m2!1sen!2snp!4v1546321686908" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe></p>
-    <!-- testimonials -->
+    </div>
+
+</section>
+<!-- //blog -->
+<p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.845522334678!2d85.33161151440146!3d27.691168982798597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb195fde211ad5%3A0x11a8970c9d050e45!2sismile+dental+clinic!5e0!3m2!1sen!2snp!4v1546321686908" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe></p>
+<!-- testimonials -->
 
 
 
 
-    <div class="testimonials section" id="testimonials">
-        <div class="container-fluid p-0">
-            <div class="wthree_testimonials_grid_main title-section text-center pb-lg-5">
-                <h4>world of medicine</h4>
-                <h3 class="w3ls-title text-center text-capitalize">patient's words..</h3>
-                <ul id="flexiselDemo1" class="pt-lg-0 pt-5">
-                    <li>
-                        <div class="wthree_testimonials_grid_main">
-                            <div class="row">
-                                <div class="col-lg-6 wthree_testimonials_grid">
-                                    <p>
-                                        Very friendly and hygienic clinic. Doctors are very friendly. Clinic is clean and plus decorated with nice painting. I suggest other to visit this clinic.
+<div class="testimonials section" id="testimonials">
+    <div class="container-fluid p-0">
+        <div class="wthree_testimonials_grid_main title-section text-center pb-lg-5">
+            <h4>world of medicine</h4>
+            <h3 class="w3ls-title text-center text-capitalize">patient's words..</h3>
 
-                                    </p>
-                                    <div class="wthree_testimonials_grid_pos">
-                                        <div class="row">
-                                            <div class="col-3 grid-test-w3l">
-                                                <img src="{{asset('images/te1.jpg')}}" alt=" " class="img-fluid" />
-                                            </div>
-                                            <div class="col-9 wthree_testimonials_grid1">
-                                                <h5>Aabesh Adhikari</h5>
-                                                <p></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6  wthree_testimonials_grid mt-lg-0 mt-5">
-                                    <p>
-                                        Doctor was good while treating with the patient. The hospitality was very nice and cozy.
+            {{--<ul id="flexiselDemo1" class="pt-lg-0 pt-5">--}}
+                {{--<li>--}}
+                    {{--<div class="wthree_testimonials_grid_main">--}}
+                        {{--<div class="row">--}}
+                            {{--@foreach($feedback as $feed)--}}
+                            {{--<div class="col-lg-6 wthree_testimonials_grid">--}}
+                                {{--<p>--}}
+                                    {{--{{$feed->msg}}--}}
+                                {{--</p>--}}
+                                {{--<div class="wthree_testimonials_grid_pos">--}}
+                                    {{--<div class="row">--}}
 
-                                    </p>
+                                        {{--<div class="col-9 wthree_testimonials_grid1">--}}
+                                            {{--<h5 style="color: dodgerblue">{{$feed->name}}</h5>--}}
+                                            {{--<p></p>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--@endforeach--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</li>--}}
 
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+            {{--</ul>--}}
 
-
-                </ul>
-            </div>
         </div>
     </div>
+</div>
 </div>

@@ -18,6 +18,7 @@ Route::get('/', function () {
 //    return view('frontend.includes.layout');
 //});
 Route::get('/','Home\HomeController@slider');
+//Route::get('/','Home\HomeController@feedback');
 Route::get('/login', function () {
     return view('backend.authentication.login');
 });
@@ -39,6 +40,7 @@ Route::get('/services','Home\HomeController@service');
 Route::get('/contacts','Home\HomeController@contact');
 Route::get('/gallerys','Home\HomeController@gallery');
 Route::get('/teams','Home\HomeController@teams');
+//Route::get('/','Home\HomeController@feedback');
 //login $ logout
 Route::get('/login','Auth\LoginController@login')->name('login');
 Route::post('/login','Auth\LoginController@postlogin');
@@ -122,6 +124,10 @@ Route::group(['middleware'=>['authenticated']],function(){
     Route::post('/time-delete/{id}','Time\TimeController@destory');
 //feedback
     Route::get('/feedback/','Feedback\FeedbackController@index');
+    Route::get('/feedback/{id}/edit','Feedback\FeedbackController@edit');
+    Route::post('/feedback/{id}','Feedback\FeedbackController@update');
+
+
 
 
 });

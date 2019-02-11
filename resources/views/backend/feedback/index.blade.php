@@ -32,8 +32,8 @@
 
 
 
-                            {{--<a href="/service/{{$service->service_id}}/edit" class="btn btn-outline-primary my-1"><i class="fa fa-edit"></i>--}}
-                            {{--</a>--}}
+                            <a href="/feedback/{{$feed->feedback_id}}/edit" class="btn btn-outline-primary my-1"><i class="fa fa-edit"></i>
+                            </a>
                             {{--<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#del{{$service->service_id}}">--}}
                                 {{--Delete--}}
                             {{--</button>--}}

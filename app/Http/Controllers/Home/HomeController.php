@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Model\AboutModel\About;
 use App\Model\ContactModel\Contact;
+use App\Model\FeedbackModel\Feedback;
 use App\Model\GalleryModel\Gallery;
 use App\Model\ServiceModel\Service;
 use App\Model\SliderModel\Slider;
@@ -51,8 +52,15 @@ class HomeController extends Controller
     public function slider()
     {
         $sliders= Slider::paginate(1);
-        return view('frontend.includes.layout',compact('sliders'));
+//        $feedback= Feedback::get();
+        $feedback=Feedback::where('priority',1)->get();
+        return view('frontend.includes.layout',compact('sliders','feedback'));
     }
+//    public function feedback()
+//    {
+////        $feedback= Feedback::get();
+//        return view('frontend.includes.layout',compact('feedback'));
+//    }
     public function index()
     {
         //
