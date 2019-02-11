@@ -1,0 +1,107 @@
+.theme-blue-color, .theme-blue-color:hover{
+    color: #253b80;
+}
+.theme-blue-background{
+    background-color: #253b80;
+}
+.theme-white-color, .theme-white-color:hover {
+    color: #fff;
+}
+.theme-white-background{
+    background-color: #fff;
+}
+.theme-dark-red-color, .theme-dark-red-color:hover{
+    color: #940334;
+}
+.theme-dark-red-background{
+    background-color: #940334;
+}
+.theme-black-background{
+    background-color: #0a0300;
+}
+.theme-black-color, .theme-black-color:hover{
+    color: #0a0300;
+}
+
+
+.rju-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.rju-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.rju-yesno-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.rju-yesno-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .rju-yesno-slider {
+    background-color: #2196F3;
+}
+
+input:focus + .rju-yesno-slider{
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .rju-yesno-slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.rju-yesno-slider.round {
+    border-radius: 34px;
+}
+
+.rju-yesno-slider.round:before {
+    border-radius: 50%;
+}
+
+
+.ck.ck-editor, .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused), .ck.ck-editor__main>.ck-editor__editable{
+    min-height: 300px!important;
+    width: 100%!important;
+}
+
+
+
+.form-control:focus{
+    border-color: #FF0000;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+.form-control{
+    border: none;
+}
+
+.table-thumbnail-img{
+    height: 200px;
+    width: auto;
+    max-width: 400px;
+    object-fit: scale-down;
+}
