@@ -87,7 +87,8 @@ class TimeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $times = Time::find($id);
+        return view('backend.time.edit',compact('times'));
     }
 
     /**
@@ -99,7 +100,31 @@ class TimeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $times = Time::find($id);
+
+
+
+        $times->day = $request->day;
+        $times->from = $request->from;
+        $times->to = $request->to;
+
+
+
+
+
+
+
+
+
+
+        if($times->save())
+        {
+            $request->session()->flash('success_msg', 'Times edit Successfully');
+            return redirect()->back(
+            );
+        }else{
+            return redirect()->back();
+        }
     }
 
     /**

@@ -102,9 +102,16 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+
+
+            'title' => 'required',
+            'description' => 'required',
+
+
+        ]);
         $galleries = new Gallery();
 
-//        $galleries->image = $request->image;
         $galleries->title = $request->title;
         $galleries->description = $request->description;
 

@@ -16,8 +16,8 @@ class ExperienceController extends Controller
      */
     public function index()
     {
-        $experiences = Experience::get();
-        return view('backend.team.experiences',compact('experiences'));
+//        $experiences = Experience::get();
+//        return view('backend.team.experiences',compact('experiences'));
     }
     public function addexperience($id)
     {

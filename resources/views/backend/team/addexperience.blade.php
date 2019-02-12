@@ -32,11 +32,11 @@
                         <div class="form-row">
                             <div class="col-md-6">
                                 <label>Year From </label>
-                                <input type="date" name="from"   class="form-control" value="{{old('year_from')}} ">
+                                <input type="date" name="from"   class="form-control" value="{{old('from')}} ">
                             </div>
                             <div class="col-md-6">
                                 <label>Year To</label>
-                                <input type="date" name="to"   class="form-control" value="{{old('year_to')}} ">
+                                <input type="date" name="to"   class="form-control" value="{{old('to')}} ">
                             </div>
                         </div>
 

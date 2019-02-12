@@ -8,7 +8,7 @@
             <form action="/gallery/{{$galleries->gallery_id}}" method="post" enctype="multipart/form-data">
                 {{@csrf_field()}}
 
-                <input type="hidden"name="_method" value="PUT">
+                {{--<input type="hidden"name="_method" value="PUT">--}}
 
 
 
@@ -20,6 +20,9 @@
                     <label for="title" class="label"> Name</label>
                     <input type="text" class="form-control" id="title" name="title" placeholder="Enter service title" value="{{$galleries->title}}">
                 </div>
+
+
+
                 <div class="form-row">
                     <button class="btn btn-outline-info btn-lg my-2" type="submit">Update Gallery</button>
                 </div>

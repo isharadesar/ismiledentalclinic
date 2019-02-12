@@ -145,6 +145,15 @@ class TeamController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $teams = Team::find($id);
+
+        if($teams->delete())
+        {
+            session()->flash('success_msg','staff its experience and education  Deleted Successfully ');
+            return redirect()->back();
+        }else{
+            session()->flash('error_msg','Oops! Error Occured..');
+            return redirect()->back();
+        }
     }
 }

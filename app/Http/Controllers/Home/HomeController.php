@@ -51,16 +51,11 @@ class HomeController extends Controller
     }
     public function slider()
     {
-        $sliders= Slider::paginate(1);
-//        $feedback= Feedback::get();
-        $feedback=Feedback::where('priority',1)->get();
-        return view('frontend.includes.layout',compact('sliders','feedback'));
+        $sliders = Slider::paginate(1);
+
+        $feedback = Feedback::where('priority', 1)->get();
+        return view('frontend.includes.layout', compact('sliders', 'feedback'));
     }
-//    public function feedback()
-//    {
-////        $feedback= Feedback::get();
-//        return view('frontend.includes.layout',compact('feedback'));
-//    }
     public function index()
     {
         //

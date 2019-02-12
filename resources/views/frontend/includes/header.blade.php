@@ -248,31 +248,31 @@
             <h4>world of medicine</h4>
             <h3 class="w3ls-title text-center text-capitalize">patient's words..</h3>
 
-            {{--<ul id="flexiselDemo1" class="pt-lg-0 pt-5">--}}
-                {{--<li>--}}
-                    {{--<div class="wthree_testimonials_grid_main">--}}
-                        {{--<div class="row">--}}
-                            {{--@foreach($feedback as $feed)--}}
-                            {{--<div class="col-lg-6 wthree_testimonials_grid">--}}
-                                {{--<p>--}}
-                                    {{--{{$feed->msg}}--}}
-                                {{--</p>--}}
-                                {{--<div class="wthree_testimonials_grid_pos">--}}
-                                    {{--<div class="row">--}}
+            <ul id="flexiselDemo1" class="pt-lg-0 pt-5">
+                <li>
+                    <div class="wthree_testimonials_grid_main">
+                        <div class="row">
+                            @foreach($feedback as $feed)
+                            <div class="col-lg-6 wthree_testimonials_grid">
+                                <p>
+                                    {{$feed->msg}}
+                                </p>
+                                <div class="wthree_testimonials_grid_pos">
+                                    <div class="row">
 
-                                        {{--<div class="col-9 wthree_testimonials_grid1">--}}
-                                            {{--<h5 style="color: dodgerblue">{{$feed->name}}</h5>--}}
-                                            {{--<p></p>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--@endforeach--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</li>--}}
+                                        <div class="col-9 wthree_testimonials_grid1">
+                                            <h5 style="color: dodgerblue">{{$feed->name}}</h5>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
 
-            {{--</ul>--}}
+            </ul>
 
         </div>
     </div>

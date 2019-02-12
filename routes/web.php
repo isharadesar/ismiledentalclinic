@@ -14,11 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-//Route::get('/', function () {
-//    return view('frontend.includes.layout');
-//});
+Route::get('/', function () {
+    return view('frontend.includes.layout');
+});
 Route::get('/','Home\HomeController@slider');
-//Route::get('/','Home\HomeController@feedback');
+
 Route::get('/login', function () {
     return view('backend.authentication.login');
 });
@@ -40,7 +40,7 @@ Route::get('/services','Home\HomeController@service');
 Route::get('/contacts','Home\HomeController@contact');
 Route::get('/gallerys','Home\HomeController@gallery');
 Route::get('/teams','Home\HomeController@teams');
-//Route::get('/','Home\HomeController@feedback');
+
 //login $ logout
 Route::get('/login','Auth\LoginController@login')->name('login');
 Route::post('/login','Auth\LoginController@postlogin');
@@ -73,7 +73,7 @@ Route::group(['middleware'=>['authenticated']],function(){
     Route::get('/team/{id}/edit','Team\TeamController@edit');
     Route::post('/team/{id}','Team\TeamController@update');
     Route::get('/team/{id}/team-index','Team\TeamindexController@index');
-//Route::post('/delete-staff/{id}','Staff\StaffController@destroy');
+    Route::post('/delete-team/{id}','Team\TeamController@destroy');
 
 //education
 
@@ -126,6 +126,8 @@ Route::group(['middleware'=>['authenticated']],function(){
     Route::get('/feedback/','Feedback\FeedbackController@index');
     Route::get('/feedback/{id}/edit','Feedback\FeedbackController@edit');
     Route::post('/feedback/{id}','Feedback\FeedbackController@update');
+//appointment
+    Route::get('/appointment/','Appointment\AppointmentController@index');
 
 
 

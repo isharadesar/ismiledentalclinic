@@ -206,7 +206,7 @@
                         <li class="nav-item">
                             <a href="/gallery" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>View service</p>
+                                <p>View gallery</p>
                             </a>
                         </li>
                     </ul>
@@ -258,6 +258,29 @@
                         {{--</li>--}}
                         <li class="nav-item">
                             <a href="/feedback" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>View </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-user-plus"></i>
+                        <p>
+                           Appointment
+                            <i class="right fa fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        {{--<li class="nav-item">--}}
+                        {{--<a href="/time/create" class="nav-link ">--}}
+                        {{--<i class="fa fa-circle-o nav-icon"></i>--}}
+                        {{--<p>Create </p>--}}
+                        {{--</a>--}}
+                        {{--</li>--}}
+                        <li class="nav-item">
+                            <a href="/appointment" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>View </p>
                             </a>

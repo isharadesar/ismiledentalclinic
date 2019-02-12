@@ -23,8 +23,8 @@
 
                         <td>
 
-                            <a href="/gallery/{{$gallery->gallery_id}}/edit" class="btn btn-outline-primary my-1"><i class="fa fa-edit"></i>
-                            </a>
+                            {{--<a href="/gallery/{{$gallery->gallery_id}}/edit" class="btn btn-outline-primary my-1"><i class="fa fa-edit"></i>--}}
+                            {{--</a>--}}
 
 
 
@@ -41,7 +41,7 @@
                                             {{--<span aria-hidden="true">&times;</span>--}}
                                             {{--</button>--}}
                                         </div>
-                                        <form method="post" action="/delete-gallery/{{$gallery->gallery_id}}">
+                                        <form method="post" action="/gallery-delete/{{$gallery->gallery_id}}">
                                             {{@csrf_field()}}
                                             <div class="modal-body">
                                                 Are you sure you want to Delete this data?
