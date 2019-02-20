@@ -137,6 +137,6 @@ class FeedbackController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }
